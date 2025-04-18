@@ -1,7 +1,9 @@
 package Main
 import com.google.gson.annotations.SerializedName
-
+import kotlinx.serialization.Serializable
+@Serializable
 data class MovieData(
+
     val id: String,
     val title: String,
     val year: Int,

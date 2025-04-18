@@ -3,7 +3,7 @@ package Main
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class ControlJson(json: String) {
+class ControlJson() {
 
     private var json: String = ""
         set(value) {
@@ -14,7 +14,7 @@ class ControlJson(json: String) {
         this.json = json
     }
 
-    fun CargaDatosMovies(): List<MovieData> {
+    fun CargaDatosMovies(json: String): List<MovieData> {
         val gson = Gson()
         val listType = object : TypeToken<List<MovieData>>() {}.type
         return gson.fromJson(json, listType)

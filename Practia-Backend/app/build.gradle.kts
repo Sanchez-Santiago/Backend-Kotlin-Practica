@@ -18,6 +18,9 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-server-core:2.0.0")
+    implementation("io.ktor:ktor-server-netty:2.0.0")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.0.0") // Esta dependencia
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0") // Serializació
 
