@@ -1,23 +1,18 @@
-# Backend-Kotlin-Practica
-¡Obvio, Santi! Acá te dejo una buena descripción para el `README.md` de tu proyecto en Kotlin con Ktor:
-
----
-
 # 🎬 Movie API con Ktor
 
-Este proyecto es una API REST desarrollada en Kotlin utilizando el framework **Ktor**, diseñada para servir información sobre películas a partir de un archivo JSON.
-
-Permite consultar datos como títulos, géneros, IDs y más a través de endpoints simples y rápidos, ideal para practicar el manejo de rutas, parámetros y serialización de datos en Kotlin.
+Este proyecto es una API REST desarrollada en Kotlin utilizando el framework **Ktor**, diseñada para gestionar una colección de películas. Permite consultar información sobre películas y realizar operaciones como agregar, editar y eliminar películas a través de diversos endpoints.
 
 ## 🚀 Características
 
 - Lectura de un archivo JSON con información de películas
-- Endpoints HTTP para consultar:
-  - Todas las películas
-  - Película por ID
-  - Películas por género
+- Endpoints HTTP para realizar operaciones:
+  - Consultar todas las películas
+  - Consultar una película por ID
+  - Consultar películas por género
+  - Consultar películas por otros parámetros
 - Serialización automática con `kotlinx.serialization`
 - Manejo de errores y respuestas personalizadas
+- Endpoint `/help` para ver ejemplos de cómo usar las peticiones
 
 ## 🧱 Tecnologías utilizadas
 
@@ -30,16 +25,34 @@ Permite consultar datos como títulos, géneros, IDs y más a través de endpoin
 ## 📁 Estructura del proyecto
 
 ```
+Practia-Backend/
 ├── app/
-│   └── src/
-│       └── main/
-│           ├── kotlin/
-│           │   └── Main/
-│           │       ├── ControlJson.kt
-│           │       ├── MovieData.kt
-│           │       └── Movie.kt
-│           └── resources/
-│               └── movies.json
+│   ├── build/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── kotlin/
+│   │   │   │   ├── Main/
+│   │   │   │   │   ├── MoviesHTTPs/
+│   │   │   │   │   │   ├── DeleteMovies.kt
+│   │   │   │   │   │   ├── GetMovies.kt
+│   │   │   │   │   │   ├── Help.kt
+│   │   │   │   │   │   ├── PatchMovies.kt
+│   │   │   │   │   │   ├── PostMovies.kt
+│   │   │   │   │   │   ├── PutMovies.kt
+│   │   │   │   │   ├── App.kt
+│   │   │   │   │   ├── ControlJson.kt
+│   │   │   │   │   ├── FileJson.kt
+│   │   │   │   │   ├── Movie.kt
+│   │   │   │   │   ├── MovieData.kt
+│   │   │   │   │   ├── MoviesUrl.kt
+│   │   │   ├── resources/
+│   │   │   │   └── movies.json
+│   ├── build.gradle.kts
+│   ├── gradle/
+├── buildSrc
+├── gradle.properties
+├── gradlew.bat
+├── settings.gradle.kts
 ```
 
 ## 🛠️ Cómo correrlo
@@ -59,11 +72,17 @@ https://github.com/Sanchez-Santiago/Backend-Kotlin-Practica
 http://localhost:8080/
 ```
 
+4. Para ver los ejemplos de uso de la API, accedé a:
+```
+http://localhost:8080/help
+```
+
 ## 🔗 Endpoints
 
 - `GET /` → Lista todas las películas
 - `GET /id/{movieId}` → Devuelve la película con el ID indicado
 - `GET /genre/{movieGenre}` → Lista películas que contengan ese género
+- `GET /help` → Muestra cómo usar las peticiones disponibles en la API
 
 ## 📦 JSON de ejemplo
 
@@ -85,4 +104,3 @@ http://localhost:8080/
 - Proyectos educativos o demostrativos
 
 ---
-

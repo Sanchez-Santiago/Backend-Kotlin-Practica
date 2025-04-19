@@ -4,14 +4,14 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MovieData(
 
-    val id: String,
-    val title: String,
-    val year: Int,
-    val director: String,
-    val duration: Int,
-    val poster: String,
-    @SerializedName("genre") val genres: Array<String>?,  // Anotación para mapear 'genre' a 'genres'
-    val rate: Double
+    var id: String,
+    var title: String,
+    var year: Int,
+    var director: String,
+    var duration: Int,
+    var poster: String,
+    @SerializedName("genre") var genres: Array<String>?,  // Anotación para mapear 'genre' a 'genres'
+    var rate: Double
 ) {
     override fun toString(): String {
         return """
